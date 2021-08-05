@@ -15,7 +15,6 @@ let products = [];
 products = Array.from(productsHTML).map((el) => {
   const price = +el.querySelector('p').innerHTML.split(' ')[0];
   const pCategory = +el.dataset.category;
-  console.log(el.dataset.category);
   const qty = +el.querySelector('.qty__item').value;
   el.querySelector('.qty__item').value = 0;
   return { element: el, price, qty, pCategory };
@@ -51,7 +50,6 @@ const toggleModal = () => {
 };
 
 const windowOnClick = (e) => {
-  console.log('suveike modal', e.target);
   if (e.target === modal) {
     toggleModal();
   }
@@ -78,7 +76,6 @@ const render = () => {
   });
   cartInfoHTML[0].innerHTML = state.cartQty;
   cartInfoHTML[1].innerHTML = state.cartSum;
-  console.log('Render state:', state);
 };
 
 // Events
