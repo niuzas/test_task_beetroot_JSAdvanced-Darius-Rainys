@@ -3,8 +3,8 @@ const cartInfoHTML = Array.from(document.querySelector('.top-cart-info__item').q
 const productsHTML = document.querySelectorAll('.product-box__item');
 const productsBox = document.querySelector('.products-box');
 const btnCheck = document.querySelector('.btn-check');
-const categoryFilter = document.querySelector('.select-box');
-const priceFilter = document.querySelector('.price-select-box');
+const categoryFilter = document.querySelector('.select-box .select-control');
+const priceFilter = document.querySelector('.price-select-box .select-control');
 const modal = document.querySelector('.modal');
 const closeButton = document.querySelector('.close-button');
 const form = document.querySelector('form');
@@ -84,6 +84,8 @@ const render = () => {
   });
   cartInfoHTML[0].innerHTML = state.cartQty;
   cartInfoHTML[1].innerHTML = state.cartSum;
+  categoryFilter.value = state.filterCategory;
+  priceFilter.value = state.filterPrice;
 };
 
 // Events
